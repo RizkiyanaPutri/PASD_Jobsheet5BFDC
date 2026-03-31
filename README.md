@@ -132,3 +132,6 @@ Method totalDC() bekerja menggunakan konsep Divide and Conquer dengan langkah-la
 5. Hasil kedua bagian tersebut dijumlahkan untuk mendapatkan total keseluruhan.
 
 Perhitungan total dilakukan dengan membagi masalah menjadi bagian lebih kecil kemudian menggabungkan hasilnya.
+
+## 4.5 Latihan Praktikum
+![alt text](image-3.png)
