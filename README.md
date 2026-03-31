@@ -82,3 +82,53 @@ jika n ganjil maka:
 ```java
 a^n = (a^(n/2)) × (a^(n/2)) × a
 ```
+## 5.4.2.Verifikasi Hasil Percobaan
+![alt text](image-2.png)
+
+## 5.4.3.Pertanyaan
+## 1.Kenapa dibutuhkan variable mid pada method TotalDC()?
+Variabel mid digunakan untuk membagi array menjadi dua bagian dalam metode Divide and Conquer. 
+mid berfungsi untuk menentukan titik tengah array antara indeks l (left) dan r (right).
+Dengan adanya mid, data dapat dibagi menjadi dua bagian yaitu:
+Bagian kiri : dari l sampai mid, 
+Bagian kanan : dari mid+1 sampai r. 
+Pembagian ini diperlukan agar proses perhitungan dapat dilakukan secara rekursif pada bagian yang lebih kecil.
+## 2.Untuk apakah statement di bawah ini dilakukan dalam TotalDC()?
+```java
+double lsum = totalDC(arr, l, mid);
+double rsum = totalDC(arr, mid+1, r);
+```
+Statement tersebut digunakan untuk menghitung total nilai pada masing-masing bagian array setelah array dibagi menjadi dua bagian.
+lsum menghitung jumlah elemen di bagian kiri array (l sampai mid)
+rsum menghitung jumlah elemen di bagian kanan array (mid+1 sampai r)
+Kedua statement tersebut merupakan proses rekursif yang terus membagi array sampai mencapai kondisi dasar.
+## 3. Kenapa diperlukan penjumlahan hasil lsum dan rsum seperti di bawah ini?
+```java
+return lsum+rsum;
+```
+Penjumlahan ini dilakukan untuk menggabungkan hasil perhitungan dari dua bagian array yang telah diproses secara rekursif.
+lsum adalah total dari bagian kiri, 
+rsum adalah total dari bagian kanan.
+Dengan menjumlahkan keduanya maka diperoleh total keseluruhan elemen array.
+Tahap ini disebut sebagai tahap combine dalam algoritma Divide and Conquer.
+## 4.Apakah base case dari totalDC()?
+Base case pada method totalDC() adalah:
+```java
+if(l==r){
+    return arr[l];
+}
+```
+Kondisi ini terjadi ketika array hanya memiliki satu elemen.
+Artinya:
+Tidak perlu dibagi lagi,
+nilai elemen tersebut langsung dikembalikan sebagai hasil.
+## 5.Tarik Kesimpulan tentang cara kerja totalDC()
+Method totalDC() bekerja menggunakan konsep Divide and Conquer dengan langkah-langkah berikut:
+
+1. Method menerima array serta batas kiri (l) dan kanan (r).
+2. Jika hanya ada satu elemen (l == r), maka elemen tersebut langsung dikembalikan.
+3. Jika lebih dari satu elemen, array dibagi menjadi dua bagian menggunakan nilai mid.
+4. Method memanggil dirinya sendiri secara rekursif untuk menghitung jumlah bagian kiri (lsum) dan bagian kanan (rsum).
+5. Hasil kedua bagian tersebut dijumlahkan untuk mendapatkan total keseluruhan.
+
+Perhitungan total dilakukan dengan membagi masalah menjadi bagian lebih kecil kemudian menggabungkan hasilnya.
